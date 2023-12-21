@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="New.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select</p>
+                <img src="111.PNG" id="arrowIcon">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="/instagram.png">
+                    <p>Facebook</p>
+                </li>
+                <li class="options">
+                    <img src="/instagram.png">
+                    <p>instagram</p>
+                </li>
+                <li class="options">
+                    <img src="/twitter.png">
+                    <p>twitter</p>
+                </li>
+                <li class="options">
+                    <img src="/wechat.png">
+                    <p>wechat</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var selectField = document.getElementById('selectField');
+        var selectText = document.getElementById('selectText');
+        var options = document.getElementsByClassName('options');
+        var list = document.getElementById('list');
+        var arrowIcon = document.getElementById('arrowIcon');
+        selectField.onclick = function () {
+            list.classList.toggle('hide');
+            arrowIcon.classList.toggle('rotate');
+        }
+        for (option of options) {
+            option.onclick = function () {
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle('hide');
+                arrowIcon.classList.toggle('rotate');
+            }
+        }
+    </script>
+</body>
+</html>
